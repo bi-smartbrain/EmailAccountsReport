@@ -25,7 +25,7 @@ class Config:
 
     # Логирование
     LOG_TO_FILE = True
-    LOG_FILE = "logs.log"
+    LOG_FILE = "logs/logs.log"
     LOG_LEVEL = "INFO"
 
     # Настройки отчета
