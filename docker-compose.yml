@@ -10,6 +10,7 @@ services:
       - TZ=Europe/Moscow    # Устанавливаем часовой пояс
     volumes:
       - /opt/secrets:/secrets:ro
+      - ./logs:/app/logs  # Монтируем папку логов
     logging:
       driver: "json-file"
       options:
