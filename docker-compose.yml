@@ -1,0 +1,18 @@
+services:
+  email-accounts-report:
+    build: .
+    image: email_accounts_report:latest
+    container_name: email_accounts_report
+    restart: unless-stopped
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1  # Отключает буферизацию Python
+      - TZ=Europe/Moscow    # Устанавливаем часовой пояс
+    volumes:
+      - /opt/secrets:/secrets:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "true"
