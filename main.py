@@ -17,7 +17,7 @@ def main():
         logger.critical(f"Критическая ошибка в мониторинге: {str(e)}")
 
         # Отправка уведомления о критической ошибке
-        notifier.send_critical_error(str(e))
+        notifier.send_critical_error(f'EmailAccountsReport: {str(e)}')
 
         if config.RESTART_ON_CRITICAL_ERROR:
             logger.info(f"Перезапуск через {config.ERROR_RETRY_DELAY} секунд...")
